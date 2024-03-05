@@ -1001,6 +1001,27 @@
       "rank": 0,
       "category_children": [],
       "handle": "hidden-homepage-featured-items"
+    },
+    {
+      "id": "pcat_low_end",
+      "name": "Gama Baja",
+      "rank": 0,
+      "category_children": [],
+      "handle": "low-end"
+    },
+    {
+      "id": "pcat_mid_range",
+      "name": "Gama Media",
+      "rank": 0,
+      "category_children": [],
+      "handle": "mid-range"
+    },
+    {
+      "id": "pcat_high_end",
+      "name": "Gama Alta",
+      "rank": 0,
+      "category_children": [],
+      "handle": "high-end"
     }
   ]
 }

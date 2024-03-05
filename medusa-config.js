@@ -41,7 +41,7 @@ const plugins = [
     options: {
       s3_url: process.env.S3_URL,
       bucket: process.env.S3_BUCKET,
-      region: process.env.S3_REGION
+      region: process.env.S3_REGION,
     },
   },
   // To enable the admin plugin, uncomment the following lines and run `yarn add @medusajs/admin`
@@ -49,24 +49,27 @@ const plugins = [
     resolve: "@medusajs/admin",
     /** @type {import('@medusajs/admin').PluginOptions} */
     options: {
-      autoRebuild: false,
+      autoRebuild: true,
+      develop: {
+        open: process.env.OPEN_BROWSER !== "false",
+      },
     },
   },
 ];
 
 const modules = {
-  /*eventBus: {
+  eventBus: {
     resolve: "@medusajs/event-bus-redis",
     options: {
-      redisUrl: REDIS_URL
-    }
+      redisUrl: REDIS_URL,
+    },
   },
   cacheService: {
     resolve: "@medusajs/cache-redis",
     options: {
-      redisUrl: REDIS_URL
-    }
-  },*/
+      redisUrl: REDIS_URL,
+    },
+  },
 };
 
 /** @type {import('@medusajs/medusa').ConfigModule["projectConfig"]} */
@@ -78,7 +81,7 @@ const projectConfig = {
   database_extra: { ssl: { rejectUnauthorized: false } },
   admin_cors: ADMIN_CORS,
   // Uncomment the following lines to enable REDIS
-  redis_url: REDIS_URL
+  redis_url: REDIS_URL,
 };
 
 /** @type {import('@medusajs/medusa').ConfigModule} */
